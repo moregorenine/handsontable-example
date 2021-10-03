@@ -3,7 +3,10 @@ const path = require('path');
 module.exports = {
   mode: 'development',
   devtool: 'eval-source-map',
-  entry: './src/js/quick-start.ts',
+  entry: {
+    'basic/quick-start': './src/js/basic/quick-start.ts',
+    'header/merge-cells': './src/js/header/merge-cells.ts',
+  },
   module: {
     rules: [
       {
@@ -18,17 +21,17 @@ module.exports = {
           {
             loader: 'css-loader',
             options: { sourceMap: true },
-          }
+          },
         ],
       },
-    ]
+    ],
   },
   resolve: {
     extensions: ['.ts', '.js'],
   },
   output: {
     publicPath: '/',
-    filename: 'bundle.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'public'),
   },
 };
