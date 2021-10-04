@@ -97,11 +97,6 @@ document.addEventListener("DOMContentLoaded", function () {
     ]
   });
 
-  function carRenderer(instance: any, td: any, row: any, col: any, prop: any, value: any, cellProperties: any) {
-    cellProperties.source = instance.getDataAtRowProp(row, 'colors').split(',');
-    Handsontable.renderers.AutocompleteRenderer.apply(carRenderer, arguments);
-  };
-
   hot.validateColumns([1, 3, 4], (valid: any) => {
     console.log(valid);
 
@@ -109,4 +104,78 @@ document.addEventListener("DOMContentLoaded", function () {
       // ... code for validated columns
     }
   })
+
+  function getCarData1() {
+    return [{
+      car: "Mercedes A 160",
+      colors: 'black,yellow,blue,grey,green',
+      color: 'black',
+      available: false
+    }, {
+      car: "Citroen C4 Coupe",
+      colors: 'black,orange,blue,grey,purple',
+      color: 'black',
+      available: false
+    }, {
+      car: "Audi A4 Avant",
+      colors: 'black,yellow,red,orange',
+      color: 'yellow',
+      available: false
+    }, {
+      car: "Opel Astra",
+      colors: 'black,yellow,blue,grey,green',
+      color: 'black',
+      available: true
+    }, {
+      car: "BMW 320i Coupe",
+      colors: 'white,green,yellow',
+      color: 'green',
+      available: false
+    }, {
+      car: "Skoda Octavia",
+      colors: 'blue,grey',
+      color: 'grey',
+      available: false
+    }, {
+      car: "BMW Z3",
+      colors: 'blue,grey, red, black',
+      color: 'blue',
+      available: true
+    }, {
+      car: "Hyundai Coupe",
+      colors: 'red, black, grey, blue, yellow',
+      color: 'yellow',
+      available: true
+    }];
+  }
+
+  const example1 = document.getElementById('example1')
+
+  const hot1 = new Handsontable(example1, {
+    className: 'root-table',
+    data: getCarData1(),
+    colHeaders: ['Car Model', 'Colors', 'Color', 'Available'],
+    stretchH: 'all',
+    fillHandle: false,
+    columns: [{
+      data: 'car'
+    }, {
+      data: 'colors',
+    }, {
+      data: 'color',
+      type: 'dropdown',
+      source: [],
+      renderer: autRenderer,
+      className: 'color'
+    }, {
+      data: 'available',
+      type: 'checkbox',
+      readOnly: true,
+    }]
+  });
+
+  function autRenderer(instance: any, td: any, row: any, col: any, prop: any, value: any, cellProperties: any) {
+    cellProperties.source = instance.getDataAtRowProp(row, 'colors').split(',');
+    Handsontable.renderers.AutocompleteRenderer.apply(autRenderer, arguments);
+  };
 });
