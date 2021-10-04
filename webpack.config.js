@@ -5,6 +5,7 @@ module.exports = {
   devtool: 'eval-source-map',
   entry: {
     'basic/quick-start': './src/js/basic/quick-start.ts',
+    'basic/data-source': './src/js/basic/data-source.ts',
     'header/merge-cells': './src/js/header/merge-cells.ts',
   },
   module: {

@@ -48,12 +48,12 @@ const updateHeader = () => {
   ThHonda.append(Div1)
 
   Tr.append(ThToyota, ThHonda)
+  Thead.append(Tr)
 
   document.querySelector("#example .ht_clone_top.handsontable table.htCore thead tr:nth-child(1) th:nth-child(1)")?.setAttribute('rowSpan', '2');
   document.querySelector("#example .ht_clone_top.handsontable table.htCore thead tr:nth-child(1) th:nth-child(2)")?.setAttribute('rowSpan', '2');
   document.querySelector("#example .ht_clone_top.handsontable table.htCore thead tr:nth-child(1) th:nth-child(3)")?.setAttribute('rowSpan', '2');
   document.querySelector("#example .ht_clone_top.handsontable table.htCore thead tr:nth-child(1) th:nth-child(4)")?.setAttribute('colSpan', '2');
-  document.querySelector("#example .ht_clone_top.handsontable table.htCore thead tr:nth-child(1) th:nth-child(5)")?.remove();
+  // document.querySelector("#example .ht_clone_top.handsontable table.htCore thead tr:nth-child(1) th:nth-child(5)")?.remove();
 
-  Thead.append(Tr)
 }
