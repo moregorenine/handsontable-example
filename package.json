@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@types/handsontable": "^0.35.0",
-    "handsontable": "^6.2.2"
+    "handsontable": "^6.2.2",
+    "handsontable-6.2.2-celltype-key-value": "^1.0.4"
   }
 }
