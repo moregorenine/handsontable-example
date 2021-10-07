@@ -8,6 +8,7 @@ module.exports = {
     'basic/data-source': './src/js/basic/data-source.ts',
     'header/merge-cells': './src/js/header/merge-cells.ts',
     'cell-types/autocomplete': './src/js/cell-types/autocomplete.ts',
+    'cell-types/autocomplete-key-value': './src/js/cell-types/autocomplete-key-value.ts',
   },
   module: {
     rules: [
