@@ -178,4 +178,10 @@ document.addEventListener("DOMContentLoaded", function () {
     cellProperties.source = instance.getDataAtRowProp(row, 'colors').split(',');
     Handsontable.renderers.AutocompleteRenderer.apply(autRenderer, arguments);
   };
+
+  // js version
+  // function autRenderer(instance, td, row, col, prop, value, cellProperties) {
+  //   cellProperties.source = instance.getDataAtRowProp(row, 'colors').split(',');
+  //   Handsontable.renderers.AutocompleteRenderer.apply(this, arguments);
+  // };
 });
